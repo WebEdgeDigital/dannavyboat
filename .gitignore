@@ -1,0 +1,3 @@
+*.dll
+/Dannavyboat/Dannavyboat/bin
+/Dannavyboat/Dannavyboat/obj/Debug/*.pdb
