@@ -84,3 +84,9 @@ C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\zh-Hant\System.Spatia
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\obj\Debug\Dannavyboat.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\obj\Debug\Dannavyboat.dll
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\obj\Debug\Dannavyboat.pdb
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\EntityFramework.SqlServer.dll
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.AspNet.Identity.Core.dll
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.AspNet.Identity.Core.xml
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.AspNet.Identity.EntityFramework.xml

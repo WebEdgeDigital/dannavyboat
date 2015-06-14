@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="98c5a75d700741b4af46d3379b694201" Name="Diagram1" >
+        <EntityTypeShape EntityType="DanNavyBoat.Booking" Width="1.5" PointX="3.625" PointY="1.25" />
+        <EntityTypeShape EntityType="DanNavyBoat.ActivityType" Width="1.5" PointX="0.5" PointY="3.125" />
+        <EntityTypeShape EntityType="DanNavyBoat.Activity" Width="1.5" PointX="0.5" PointY="0.625" />
+        <EntityTypeShape EntityType="DanNavyBoat.User" Width="1.5" PointX="6.375" PointY="0.5" />
+        <AssociationConnector Association="DanNavyBoat.UserBooking" />
+        <AssociationConnector Association="DanNavyBoat.BookingActivity" />
+        <EntityTypeShape EntityType="DanNavyBoat.Payment" Width="1.5" PointX="4.875" PointY="3.875" />
+        <EntityTypeShape EntityType="DanNavyBoat.PaymentDetails" Width="1.5" PointX="7.25" PointY="3.375" />
+        <AssociationConnector Association="DanNavyBoat.PaymentPaymentDetails" />
+        <AssociationConnector Association="DanNavyBoat.BookingPayment" />
+        <AssociationConnector Association="DanNavyBoat.ActivityActivityType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

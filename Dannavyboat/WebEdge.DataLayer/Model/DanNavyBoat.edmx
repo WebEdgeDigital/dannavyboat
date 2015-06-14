@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DanNavyBoat.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DanNavyBoatStoreContainer">
+    <EntitySet Name="Bookings" EntityType="DanNavyBoat.Store.Bookings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActivityTypes" EntityType="DanNavyBoat.Store.ActivityTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Activities" EntityType="DanNavyBoat.Store.Activities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DanNavyBoat.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="DanNavyBoat.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentDetails" EntityType="DanNavyBoat.Store.PaymentDetails" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserBooking" Association="DanNavyBoat.Store.UserBooking">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="BookingActivity" Association="DanNavyBoat.Store.BookingActivity">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Activity" EntitySet="Activities" />
+    </AssociationSet>
+    <AssociationSet Name="PaymentPaymentDetails" Association="DanNavyBoat.Store.PaymentPaymentDetails">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="PaymentDetails" EntitySet="PaymentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="BookingPayment" Association="DanNavyBoat.Store.BookingPayment">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="ActivityActivityType" Association="DanNavyBoat.Store.ActivityActivityType">
+      <End Role="Activity" EntitySet="Activities" />
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserUserId" Type="int" Nullable="false" />
+    <Property Name="Activity_ActivityId" Type="int" Nullable="false" />
+    <Property Name="Payment_PaymentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActivityTypes">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activities">
+    <Key>
+      <PropertyRef Name="ActivityId" />
+    </Key>
+    <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActivityType_ActivityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentDetail_PaymentDetailId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentDetails">
+    <Key>
+      <PropertyRef Name="PaymentDetailId" />
+    </Key>
+    <Property Name="PaymentDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="UserBooking">
+    <End Role="User" Type="DanNavyBoat.Store.Users" Multiplicity="1" />
+    <End Role="Booking" Type="DanNavyBoat.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="UserUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BookingActivity">
+    <End Role="Booking" Type="DanNavyBoat.Store.Bookings" Multiplicity="*" />
+    <End Role="Activity" Type="DanNavyBoat.Store.Activities" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Activity">
+        <PropertyRef Name="ActivityId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Activity_ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaymentPaymentDetails">
+    <End Role="Payment" Type="DanNavyBoat.Store.Payments" Multiplicity="*" />
+    <End Role="PaymentDetails" Type="DanNavyBoat.Store.PaymentDetails" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentDetails">
+        <PropertyRef Name="PaymentDetailId" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="PaymentDetail_PaymentDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BookingPayment">
+    <End Role="Booking" Type="DanNavyBoat.Store.Bookings" Multiplicity="*" />
+    <End Role="Payment" Type="DanNavyBoat.Store.Payments" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Payment_PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActivityActivityType">
+    <End Role="Activity" Type="DanNavyBoat.Store.Activities" Multiplicity="*" />
+    <End Role="ActivityType" Type="DanNavyBoat.Store.ActivityTypes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityType">
+        <PropertyRef Name="ActivityId" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="ActivityType_ActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DanNavyBoat" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DanNavyBoatContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="DanNavyBoat.Booking" />
+          <EntitySet Name="ActivityTypes" EntityType="DanNavyBoat.ActivityType" />
+          <EntitySet Name="Activities" EntityType="DanNavyBoat.Activity" />
+          <EntitySet Name="Users" EntityType="DanNavyBoat.User" />
+          <AssociationSet Name="UserBooking" Association="DanNavyBoat.UserBooking">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="BookingActivity" Association="DanNavyBoat.BookingActivity">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Activity" EntitySet="Activities" />
+          </AssociationSet>
+          <EntitySet Name="Payments" EntityType="DanNavyBoat.Payment" />
+          <EntitySet Name="PaymentDetails" EntityType="DanNavyBoat.PaymentDetails" />
+          <AssociationSet Name="PaymentPaymentDetails" Association="DanNavyBoat.PaymentPaymentDetails">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="PaymentDetails" EntitySet="PaymentDetails" />
+          </AssociationSet>
+          <AssociationSet Name="BookingPayment" Association="DanNavyBoat.BookingPayment">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="ActivityActivityType" Association="DanNavyBoat.ActivityActivityType">
+            <End Role="Activity" EntitySet="Activities" />
+            <End Role="ActivityType" EntitySet="ActivityTypes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="BookingId" />
+          </Key>
+          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="DanNavyBoat.UserBooking" FromRole="Booking" ToRole="User" />
+          <Property Name="UserUserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Activity" Relationship="DanNavyBoat.BookingActivity" FromRole="Booking" ToRole="Activity" />
+          <NavigationProperty Name="Payment" Relationship="DanNavyBoat.BookingPayment" FromRole="Booking" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="ActivityType">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Activity" Relationship="DanNavyBoat.ActivityActivityType" FromRole="ActivityType" ToRole="Activity" />
+        </EntityType>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Booking" Relationship="DanNavyBoat.BookingActivity" FromRole="Activity" ToRole="Booking" />
+          <NavigationProperty Name="ActivityType" Relationship="DanNavyBoat.ActivityActivityType" FromRole="Activity" ToRole="ActivityType" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Bookings" Relationship="DanNavyBoat.UserBooking" FromRole="User" ToRole="Booking" />
+        </EntityType>
+        <Association Name="UserBooking">
+          <End Type="DanNavyBoat.User" Role="User" Multiplicity="1" />
+          <End Type="DanNavyBoat.Booking" Role="Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="UserUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BookingActivity">
+          <End Type="DanNavyBoat.Booking" Role="Booking" Multiplicity="1" />
+          <End Type="DanNavyBoat.Activity" Role="Activity" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="PaymentDetail" Relationship="DanNavyBoat.PaymentPaymentDetails" FromRole="Payment" ToRole="PaymentDetails" />
+          <NavigationProperty Name="Booking" Relationship="DanNavyBoat.BookingPayment" FromRole="Payment" ToRole="Booking" />
+        </EntityType>
+        <EntityType Name="PaymentDetails">
+          <Key>
+            <PropertyRef Name="PaymentDetailId" />
+          </Key>
+          <Property Name="PaymentDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Payment" Relationship="DanNavyBoat.PaymentPaymentDetails" FromRole="PaymentDetails" ToRole="Payment" />
+        </EntityType>
+        <Association Name="PaymentPaymentDetails">
+          <End Type="DanNavyBoat.Payment" Role="Payment" Multiplicity="1" />
+          <End Type="DanNavyBoat.PaymentDetails" Role="PaymentDetails" Multiplicity="1" />
+        </Association>
+        <Association Name="BookingPayment">
+          <End Type="DanNavyBoat.Booking" Role="Booking" Multiplicity="1" />
+          <End Type="DanNavyBoat.Payment" Role="Payment" Multiplicity="1" />
+        </Association>
+        <Association Name="ActivityActivityType">
+          <End Type="DanNavyBoat.Activity" Role="Activity" Multiplicity="1" />
+          <End Type="DanNavyBoat.ActivityType" Role="ActivityType" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DanNavyBoatStoreContainer" CdmEntityContainer="DanNavyBoatContainer">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.Booking)">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="UserUserId" ColumnName="UserUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.ActivityType)">
+        <MappingFragment StoreEntitySet="ActivityTypes">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.Activity)">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(DanNavyBoat.PaymentDetails)">
+        <MappingFragment StoreEntitySet="PaymentDetails">
+          <ScalarProperty Name="PaymentDetailId" ColumnName="PaymentDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BookingActivity" TypeName="DanNavyBoat.BookingActivity" StoreEntitySet="Bookings">
+      <EndProperty Name="Activity">
+        <ScalarProperty Name="ActivityId" ColumnName="Activity_ActivityId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PaymentPaymentDetails" TypeName="DanNavyBoat.PaymentPaymentDetails" StoreEntitySet="Payments">
+      <EndProperty Name="PaymentDetails">
+        <ScalarProperty Name="PaymentDetailId" ColumnName="PaymentDetail_PaymentDetailId" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BookingPayment" TypeName="DanNavyBoat.BookingPayment" StoreEntitySet="Bookings">
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="PaymentId" ColumnName="Payment_PaymentId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActivityActivityType" TypeName="DanNavyBoat.ActivityActivityType" StoreEntitySet="Activities">
+      <EndProperty Name="ActivityType">
+        <ScalarProperty Name="ActivityId" ColumnName="ActivityType_ActivityId" />
+      </EndProperty>
+      <EndProperty Name="Activity">
+        <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
