@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEdge.DataLayer", "WebEdg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEdge.BusinessLayer", "WebEdge.BusinessLayer\WebEdge.BusinessLayer.csproj", "{CE2C150D-A249-43F1-B3E5-01D9B1DF2226}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEdge.Core", "WebEdge.Core\WebEdge.Core.csproj", "{61853E34-152D-4FD2-9A48-FD1D78732B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEdge.Api", "WebEdge.Api\WebEdge.Api.csproj", "{F78BBAD2-34CF-4777-AC1C-11D4DA518F06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{CE2C150D-A249-43F1-B3E5-01D9B1DF2226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2C150D-A249-43F1-B3E5-01D9B1DF2226}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2C150D-A249-43F1-B3E5-01D9B1DF2226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61853E34-152D-4FD2-9A48-FD1D78732B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61853E34-152D-4FD2-9A48-FD1D78732B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61853E34-152D-4FD2-9A48-FD1D78732B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61853E34-152D-4FD2-9A48-FD1D78732B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78BBAD2-34CF-4777-AC1C-11D4DA518F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78BBAD2-34CF-4777-AC1C-11D4DA518F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78BBAD2-34CF-4777-AC1C-11D4DA518F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78BBAD2-34CF-4777-AC1C-11D4DA518F06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
