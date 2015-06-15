@@ -200,6 +200,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\beach-blue-sky.jpg" />
+    <Content Include="Content\Images\Beach.jpg" />
+    <Content Include="Content\Images\blue-sky-beach.jpg" />
+    <Content Include="Content\Images\blue-sky-beach2.jpg" />
+    <Content Include="Content\Images\fishing1.jpg" />
+    <Content Include="Content\Images\mauritius-blue-bay-beach.jpg" />
+    <Content Include="Content\Images\mru-beach-blue-sky.jpg" />
+    <Content Include="Content\Images\sky-blue-beach.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

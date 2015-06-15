@@ -20,17 +20,24 @@ namespace Dannavyboat
 
             bundles.Add(new ScriptBundle("~/bundles/foundation").Include(
                     "~/Scripts/foundation/foundation.js"
-                    , "~/Scripts/foundation/foundation.slider.js"));
+                    , "~/Scripts/foundation/foundation.slider.js"
+                    , "~/Scripts/foundation/foundation.accordion.js"
+                    ,"~/Scripts/foundation/foundation.orbit.js"
+                    , "~/Scripts/foundation/foundation.topbar.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/webedge").Include(
+            "~/Scripts/WebEdge/webedge.js")); 
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/wireframe.css"));
+                "~/Content/wireframe.css"
+                ,"~/Content/Site.css"));
             bundles.Add(new StyleBundle("~/Content/foundationcss").Include(
- "~/Content/themes/foundation/css/foundation.css"));
+            "~/Content/themes/foundation/css/foundation.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

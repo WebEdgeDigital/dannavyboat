@@ -179,9 +179,6 @@ namespace WebEdge.Api.Controllers
             return Ok();
         }
 
-
-     
-
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]

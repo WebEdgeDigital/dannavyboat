@@ -1,54 +1,96 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/foundationcss")
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/foundationcss")
 
 
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                    <h1>
+                        <a href="#">
+                            Top Bar Title
+                        </a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            </ul>
+            <section class="top-bar-section">
+
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li class="has-dropdown">
+                        <a href="#">Main Item 1</a>
+                        <ul class="dropdown">
+                            <li><label>Section Name</label></li>
+                            <li class="has-dropdown">
+                                <a href="#" class="">Has Dropdown, Level 1</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Dropdown Options</a></li>
+                                    <li><a href="#">Dropdown Options</a></li>
+                                    <li><a href="#">Level 2</a></li>
+                                    <li><a href="#">Subdropdown Option</a></li>
+                                    <li><a href="#">Subdropdown Option</a></li>
+                                    <li><a href="#">Subdropdown Option</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li class="divider"></li>
+                            <li><label>Section Name</label></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">See all &rarr;</a></li>
                         </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#">Main Item 2</a></li>
+                    <li class="divider"></li>
+                    <li class="has-dropdown">
+                        <a href="#">Main Item 3</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li><a href="#">Dropdown Option</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">See all &rarr;</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Web Edge Digital</p>
-                </div>
+        </nav>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Web Edge Digital</p>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/webedge")
 
 
-        @RenderSection("scripts", required: false)
-    </body>
+    @RenderSection("scripts", required: false)
+</body>
 </html>
