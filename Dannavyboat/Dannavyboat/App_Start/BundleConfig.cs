@@ -39,6 +39,9 @@ namespace Dannavyboat
             bundles.Add(new StyleBundle("~/Content/foundationcss").Include(
             "~/Content/themes/foundation/css/foundation.css"));
 
+            bundles.Add(new StyleBundle("~/Content/fontawesome").Include(
+            "~/Content/font-awesome/css/font-awesome.css"));
+
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
                         "~/Content/themes/base/jquery.ui.resizable.css",

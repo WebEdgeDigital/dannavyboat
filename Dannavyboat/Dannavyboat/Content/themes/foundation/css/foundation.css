@@ -1844,7 +1844,11 @@ meta.foundation-mq-topbar {
     .top-bar-section ul li > a {
       color: #FFFFFF;
       display: block;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      /*font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;*/
+        font-family: 'Segoe UI';
+    /*src:url('../Content/fonts/raspberrygranola.ttf') format('truetype');*/
+        /*url('../Content/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');*/
+}
       font-size: 0.8125rem;
       font-weight: normal;
       padding-left: 0.9375rem;
