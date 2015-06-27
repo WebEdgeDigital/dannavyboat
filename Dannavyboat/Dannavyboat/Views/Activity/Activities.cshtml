@@ -3,11 +3,14 @@
     ViewBag.Title = "Activities";
 }
 
-<h2>Activities</h2>
 
 @foreach (var item in Model.ActivitiesList)
 {
-
+    <div class="row">
+        <div class="large-10">
+            <h1>@item.ActivityTitle</h1>
+        </div>
+    </div>
 
     <div class="row">
         <div class="large-12 columns">
@@ -25,6 +28,8 @@
         </div>
     </div>
     <hr />
+
+
 
     <div class="row">
         <div class="large-4 columns">
