@@ -17,7 +17,7 @@ namespace Dannavyboat.Controllers
         #region Constructor
         public ActivityController (IActivity activity)
         {
-            _activity = activity;
+            this._activity = activity;
         }
 
         #endregion
@@ -28,11 +28,11 @@ namespace Dannavyboat.Controllers
         public ActionResult Activities()
         {
             //get contents of activity from db
-            var activityModal = new ActivityModel();
+            var activityModal = new ActivityViewModel();
 
-            var activitiesList = _activity.GetAllActivities();
+            activityModal.ActivitiesList = _activity.GetAllActivities();
 
-            return View("Activity", activityModal);
+            return View("Activities", activityModal);
         }
         #endregion
 

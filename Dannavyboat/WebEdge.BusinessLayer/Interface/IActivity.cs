@@ -9,7 +9,7 @@ namespace WebEdge.BusinessLayer.Interface
 {
     public interface IActivity
     {
-        public List<Activity> GetAllActivities();
+        List<ActivityDto> GetAllActivities();
 
     }
 }

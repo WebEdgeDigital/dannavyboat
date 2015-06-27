@@ -6,29 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using WebEdge.BusinessLayer.Helpers;
 using WebEdge.BusinessLayer.Interface;
+using WebEdge.BusinessLayer.Models;
 using DataLayer = WebEdge.DataLayer.Model;
 
 namespace WebEdge.BusinessLayer.Impl
 {
     public class Activity : IActivity
     {
-        #region Constructor
-        public Activity ()
-        {
-
-        }
-
-        #endregion
-
         #region Methods 
 
-        public List<Activity> GetAllActivities()
+        public List<ActivityDto> GetAllActivities()
         {
-            List<Activity> activitiesList = new List<Activity>();
+            List<ActivityDto> activitiesList = new List<ActivityDto>();
             using (var c = ContextHelper.DefaultContext())
             {
                 var dbItem = c.Activities;
-                Mapper.CreateMap<DataLayer.Model.Activity, Activity>();
+                Mapper.CreateMap<DataLayer.Model.Activity, ActivityDto>();
                 Mapper.Map(dbItem, activitiesList);
 
             }

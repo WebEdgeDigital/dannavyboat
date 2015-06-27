@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebEdge.BusinessLayer.Models
 {
-    public class Activity
+   public class ActivityDto
     {
         #region Properties
         public int ActivityId { get; set; }
@@ -16,5 +16,6 @@ namespace WebEdge.BusinessLayer.Models
         public string ActivityImagePath { get; set; }
         public int ActivityType { get; set; }
         #endregion
+
     }
 }

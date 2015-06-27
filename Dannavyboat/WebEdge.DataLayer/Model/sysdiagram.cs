@@ -12,13 +12,12 @@ namespace WebEdge.DataLayer.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Booking
+    public partial class sysdiagram
     {
-        public int BookingId { get; set; }
-        public int UserUserId { get; set; }
-    
-        public virtual User User { get; set; }
-        public virtual Activity Activity { get; set; }
-        public virtual Payment Payment { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

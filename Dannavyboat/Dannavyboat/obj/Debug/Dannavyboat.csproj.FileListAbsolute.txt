@@ -107,3 +107,7 @@ C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.Practices.U
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.Practices.Unity.Mvc.xml
 C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\WebEdge.BusinessLayer.dll
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\WebEdge.DataLayer.dll
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\WebEdge.BusinessLayer.pdb
+C:\inetpub\wwwroot\dannavyboat\Dannavyboat\Dannavyboat\bin\WebEdge.DataLayer.pdb
