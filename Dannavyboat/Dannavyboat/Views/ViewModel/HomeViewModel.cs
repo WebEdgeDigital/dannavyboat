@@ -6,11 +6,12 @@ using WebEdge.BusinessLayer.Models;
 
 namespace Dannavyboat.Views.ViewModel
 {
-    public class ActivityViewModel
+    public class HomeViewModel
     {
+        //home to show a list of activitie (max 3)
         public List<ActivityDto> ActivitiesList { get; set; }
 
-        public ActivityDto Activity { get; set; }
-
+        //also shows 
+        
     }
 }

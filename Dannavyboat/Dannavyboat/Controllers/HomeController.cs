@@ -1,16 +1,34 @@
-﻿using System;
+﻿using Dannavyboat.Views.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebEdge.BusinessLayer.Interface;
 
 namespace Dannavyboat.Controllers
 {
     public class HomeController : Controller
     {
+
+        #region Properties
+        public IActivity _activity;
+        #endregion
+
+        #region Constructor
+        public HomeController(IActivity activity)
+        {
+            this._activity = activity;
+        }
+
+        #endregion
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //get contents of activity from db
+            var homeViewModel = new HomeViewModel();
+
+            homeViewModel.ActivitiesList = _activity.GetAllActivities();
+            //also needs to select 3 random activities
 
             return View();
         }

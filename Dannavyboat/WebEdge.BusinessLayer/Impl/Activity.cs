@@ -28,6 +28,20 @@ namespace WebEdge.BusinessLayer.Impl
             return activitiesList;
         }
 
+        public ActivityDto GetActivityById(int activityId)
+        {
+            ActivityDto activity = new ActivityDto();
+            using (var c = ContextHelper.DefaultContext())
+            {
+                var dbItem = c.Activities.FirstOrDefault(a =>a.ActivityId == activityId);
+                Mapper.CreateMap<DataLayer.Model.Activity, ActivityDto>();
+                Mapper.Map(dbItem, activity);
+
+            }
+            return activity;
+        }
+        
+
         #endregion
     }
 }

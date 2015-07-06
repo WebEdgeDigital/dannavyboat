@@ -24,19 +24,32 @@ namespace Dannavyboat.Controllers
 
         #region Public Methods
         [HttpGet]
-
         public ActionResult Activities()
         {
             //get contents of activity from db
-            var activityModal = new ActivityViewModel();
+            var activityModel = new ActivityViewModel();
+            //should populate main activity by id ? or have url name 
 
-            activityModal.ActivitiesList = _activity.GetAllActivities();
+            activityModel.ActivitiesList = _activity.GetAllActivities();
+            //also needs to select 3 random activities
 
-            return View("Activities", activityModal);
+            return View("Activities", activityModel);
+        }
+
+        [HttpGet]
+        public ActionResult GetActivityById(int activityId)
+        {
+            //get contents of activity from db
+            var activityModel = new ActivityViewModel();
+
+            activityModel.Activity = _activity.GetActivityById(activityId);
+            //also needs to select 3 random activities
+
+            return View("Activities", activityModel);
         }
         #endregion
 
-        #region Privae Methods
+        #region Private Methods
 
 
         #endregion

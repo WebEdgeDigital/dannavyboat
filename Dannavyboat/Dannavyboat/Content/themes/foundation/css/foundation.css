@@ -2045,7 +2045,7 @@ meta.foundation-mq-topbar {
 @media only screen and (min-width: 40.0625em) {
   .top-bar {
     background: #008CBA;
-    overflow: visible; }
+   }
     .top-bar:before, .top-bar:after {
       content: " ";
       display: table; }
@@ -2075,8 +2075,8 @@ meta.foundation-mq-topbar {
 
   .contain-to-grid .top-bar {
     margin-bottom: 0;
-    margin: 0 auto;
-    max-width: 62.5rem; }
+    margin: -10px;
+    }
 
   .top-bar-section {
     transition: none 0 0;

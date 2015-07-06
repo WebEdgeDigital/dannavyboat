@@ -11,5 +11,7 @@ namespace WebEdge.BusinessLayer.Interface
     {
         List<ActivityDto> GetAllActivities();
 
+        ActivityDto GetActivityById(int activityId);
+
     }
 }
